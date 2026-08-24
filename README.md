@@ -7,15 +7,13 @@ Homebrew tap for my macOS apps.
 A Quran verse on your Mac desktop, refreshed on your schedule. [Source and documentation](https://github.com/MalekAlbdoor/ayah).
 
 ```sh
-brew install malekalbdoor/tap/ayah
-xattr -r -d com.apple.quarantine /Applications/Ayah.app
-open /Applications/Ayah.app
+brew install --cask malekalbdoor/tap/ayah
 ```
 
-### Why the `xattr` line is needed
+Then right-click your desktop, choose **Edit Widgets**, search for **Ayah**, and drag **Verse of the Day** where you want it.
 
-Ayah is not notarized by Apple, since notarizing requires a paid Apple Developer membership and the app is free. macOS quarantines anything downloaded and refuses to open un-notarized quarantined apps, so the flag has to be cleared once after installing.
+### What the cask does about quarantine
 
-Homebrew used to offer `--no-quarantine` for this, but [removed it in Homebrew 6 with no replacement](https://github.com/Homebrew/brew/issues/20755).
+Ayah is not notarized by Apple, since notarizing requires a paid Apple Developer membership and the app is free. macOS quarantines anything downloaded and refuses to open un-notarized quarantined apps, so the cask clears that flag in a `postflight` block during install, and prints a note saying it did.
 
-The app is open source, sandboxed, and has no network entitlement, so it cannot reach the network at all. See the [security notes](https://github.com/MalekAlbdoor/ayah#why---no-quarantine) for what you are actually trusting, or build it from source to skip the flag entirely.
+That is a security check being cleared on your behalf, so it is worth knowing what you are trusting. Ayah is sandboxed, has no network entitlement, and is built from source you can read. The [security notes](https://github.com/MalekAlbdoor/ayah#what-you-are-trusting) go through it in full, and building from source skips the flag entirely.

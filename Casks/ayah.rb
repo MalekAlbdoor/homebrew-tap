@@ -13,10 +13,10 @@ cask "ayah" do
     strategy :github_latest
   end
 
-  # Ayah is not notarized, so Homebrew's quarantine would block it from
-  # opening. Install with:
-  #   brew install --no-quarantine malekalbdoor/tap/ayah
-  depends_on macos: ">= :tahoe"
+  # Ayah is not notarized. Homebrew 6 removed --no-quarantine with no
+  # replacement, so after installing, clear the quarantine flag once:
+  #   xattr -r -d com.apple.quarantine /Applications/Ayah.app
+  depends_on macos: :tahoe
 
   app "Ayah.app"
 

@@ -1,9 +1,12 @@
 cask "crunchforcanvas" do
-  version "0.1.0"
-  sha256 "e028f3cb92fa5fb3b48020d44f7fb31eb763cbea00150f0b1b830119f9b3e845"
+  version "0.1.1"
+  sha256 "0f68df96be9d0bbb67ea531b0d09f1f9fa3adafa9399f77afc38116f9b2e384b"
 
-  url "https://github.com/MalekAlbdoor/CrunchForCanvas-releases/releases/download/mac-v#{version}/CrunchForCanvas-#{version}.zip",
-      verified: "github.com/MalekAlbdoor/CrunchForCanvas-releases/"
+  # The url stanza takes no extra parameter. Homebrew deprecated the one that
+  # restated the host, and a GitHub release URL is checked by its default
+  # behaviour anyway. Left in, it printed a deprecation warning four times
+  # during one ordinary install, so a test refuses it.
+  url "https://github.com/MalekAlbdoor/CrunchForCanvas-releases/releases/download/mac-v#{version}/CrunchForCanvas-#{version}.zip"
   name "Crunch for Canvas"
   desc "Menu bar coursework dashboard and desktop widgets for Canvas"
   homepage "https://github.com/MalekAlbdoor/CrunchForCanvas-releases"

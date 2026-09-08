@@ -1,6 +1,6 @@
 cask "crunchforcanvas" do
-  version "0.1.2"
-  sha256 "0f0afeea823b382029fb01b1f0037e8ab1a143a81e872ad02b92bff9315dbefb"
+  version "0.1.3"
+  sha256 "cf47eef577237f85c3f0493014a58fd88e258460e55623fb03bedadcfb8a90a9"
 
   # The url stanza takes no extra parameter. Homebrew deprecated the one that
   # restated the host, and a GitHub release URL is checked by its default

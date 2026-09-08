@@ -17,3 +17,11 @@ Then right-click your desktop, choose **Edit Widgets**, search for **Ayah**, and
 Ayah is not notarized by Apple, since notarizing requires a paid Apple Developer membership and the app is free. macOS quarantines anything downloaded and refuses to open un-notarized quarantined apps, so the cask clears that flag in a `postflight` block during install, and prints a note saying it did.
 
 That is a security check being cleared on your behalf, so it is worth knowing what you are trusting. Ayah is sandboxed, has no network entitlement, and is built from source you can read. The [security notes](https://github.com/MalekAlbdoor/ayah#what-you-are-trusting) go through it in full, and building from source skips the flag entirely.
+
+## Crunch for Canvas
+
+```sh
+brew install --cask malekalbdoor/tap/crunchforcanvas
+```
+
+Crunch for Canvas is not notarized. macOS may ask you to approve the first launch; the cask does not disable or remove that protection.
